@@ -1,4 +1,4 @@
-from datetime import datetime
+rom datetime import datetime
 from decimal import Decimal
 
 from pydantic import BaseModel
@@ -12,7 +12,7 @@ class VenueOut(BaseModel):
 class TierOut(BaseModel):
     name: str
     price: Decimal
-    available: str
+    available: int
 
 
 class EventListItemOut(BaseModel):
