@@ -31,7 +31,7 @@ async def shutdown():
     await postgres.close_db_pool()
 
 app.include_router(monitor.router, prefix='/api/v1', tags=['monitor'])
-app.include_router(events.router, prefix='/api/v1/event', tags=['events'])
+app.include_router(events.router, prefix='/api/v1/events', tags=['events'])
 
 @app.get('/healthz')
 async def healthz():
