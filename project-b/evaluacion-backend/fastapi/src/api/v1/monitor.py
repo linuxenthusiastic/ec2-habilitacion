@@ -33,7 +33,7 @@ async def healthz() -> dict:
         )
 
     return {
-        "status": status,
+        "status": "healthy",
         "postgres": "healthy",
         "redis": "healthy"
     }
