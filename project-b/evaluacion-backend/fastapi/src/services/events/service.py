@@ -81,7 +81,7 @@ class EventService:
                     venue=Venue(name=row["venue_name"], city=row["venue_city"]),
                     current_price=row["current_price"],
                     current_tier_id=str(row["current_tier_id"]),
-                    available=0,
+                    available= max(0,row["total_quantity"] - row["sold"]),
                     total_capacity=int(row["total_capacity"]),
                 )
             )
@@ -148,7 +148,7 @@ class EventService:
                 price=tier_row["price"]
             ))
             request_time=request_time + timedelta(hours=2)
-            ++count
+            count += 1
 
         return tiers
     
