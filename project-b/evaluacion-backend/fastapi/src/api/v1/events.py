@@ -61,7 +61,7 @@ async def event_details(
 
 @router.get('/{id}/price-history')
 @limiter.limit(get_rate_limit)
-async def list_events(
+async def get_price_history(
     request: Request,
     id: str,
     event_service: EventService = Depends(get_event_service),
